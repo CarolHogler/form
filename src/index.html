@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Centro de Apoio aos Usuário-s</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="titulo">CAU-s</h1>
+      <h3>Seja muito bem-vindo ao Centro de Apoio aos Usuário-s!</h3>
+      <p id="subtitulo">Prezado usuário, solicitamos que forneça abaixo o máximo de informações possíveis.</p>
+      <br />
+    </div>
+    <span class="mensagem-sucesso">
+      <strong>Sucesso! Sua mensagem foi enviada ao nosso setor de atendimento!</strong>
+    </span>
+    <span class="mensagem-erro">
+      <strong>Erro! Preencha os campos obrigatórios!</strong>
+    </span>
+    <div id="fundo-branco">
+      <form>
+        <fieldset class="grupo">
+          <legend>Nos conte um pouco mais sobre você</legend>
+          <div class="campos">
+            <label for="nome"><strong>Nome</strong><span class="preenchimento-obrigatorio"></span></label>
+            <input type="text" name="nome" id="nome" placeholder=" Nome" required />
+          </div>
+          <div class="campos">
+            <label for="sobrenome"><strong>Sobrenome </strong><span class="preenchimento-obrigatorio"></span></label>
+            <input type="text" name="sobrenome" id="sobrenome" placeholder=" Sobrenome" required />
+          </div>
+          <div class="campos">
+            <label for="data-nascimento"><strong>Data de Nascimento </strong><span class="preenchimento-opcional"></span></label>
+            <input oninput="mascara(this, 'data-nascimento')" id="data-nascimento" type="text" class="data-nascimento" placeholder=" dd/mm/aaaa" autocomplete="off" name="data-nascimento">
+            <!--Outra opção de campo data
+              <input type="date" name="data-nascimento" id="data-nascimento" placeholder="DD/MM/AAAA" />
+            -->
+          </div>
+        </fieldset>
+        <fieldset class="grupo">
+          <div class="campos">
+            <label for="email"><strong>E-mail </strong><span class="preenchimento-obrigatorio"></span></label>
+            <input type="email" name="email" id="email" placeholder=" E-mail" required />
+          </div>
+          <div class="campos">
+            <label for="linkedin"><strong>LinkedIn </strong></label>
+            <input type="link" name="linkedin" id="linkedin" />
+          </div>
+          <div class="campos">
+            <label for="telefone"><strong>Telefone </strong><span class="telefone-label-span preenchimento-obrigatorio"></span></label>
+            <input oninput="mascara(this, 'telefone-ddd')" id="ddd" type="text" class="telefone-ddd" placeholder=" DDD" autocomplete="off" name="telefone-ddd"><br>
+            <input oninput="mascara(this, 'telefone-numero')" id="numero" type="text" class="telefone-numero" placeholder="XXXXX-XXXX" autocomplete="off" name="telefone-numero">
+          </div>
+        </fieldset>
+        <div class="estudo">
+          <label for="estudo"><strong>Área de estudo</strong></label>
+          <div class="campos">
+              <select name="estudo" class="tipo-estudante" required>
+                  <option selected disabled value="">-- Selecione --</option>
+                  <option value="01">CSS</option>
+                  <option value="02">CSS / HTML</option>
+                  <option value="03">HTML</option>
+                  <option value="04">JavaScript</option>
+                  <option value="99">Outros</option>
+              </select>
+          </div>
+        </div>
+        <div id="tipo-apoio" class="campos">
+          <label><strong>Preciso:</strong></label>
+          <label>
+            <input type="radio" name="centro-apoio-usuário-s-cau-s" value="ajuda" />De ajuda com projeto
+          </label>
+          <label>
+            <input type="radio" name="centro-apoio-usuário-s-cau-s" value="conversar" />Conversar sobre minha carreira
+          </label>
+          <label>
+            <input type="radio" name="centro-apoio-usuário-s-cau-s" value="feedback" />Deixar um Feedback
+          </label>
+        </div>
+        <div class="urgencia">
+          <label for="urgencia"><strong>Urgência</strong></label>
+          <div class="campos">
+            <select name="urgencia" class="tipo-urgencia" required>
+                <option selected disabled value="">-- Selecione --</option>
+                <option value="01">Alta</option>
+                <option value="02">Baixa</option>
+                <option value="03">Média</option>
+                <option value="04">Urgente</option>
+              </select>
+          </div>
+        </div>
+        <div class="campos">
+          <label><strong>Como podemos te ajudar?</strong></br>
+          <span class="preenchimento-obrigatorio"> Preenchimento obrigatório!</span></label>
+          <textarea row="6" id="comentario" name="comentario" required></textarea>
+        </div>
+        <div class="campos">
+          <label><strong>Anexos</strong><span class="preenchimento-opcional"> - opcional</span></label>
+          <input id="arquivo-upload" type="file">
+        </div>
+        <fieldset class="grupo">
+          <legend>Por qual canal você prefere receber um retorno?</legend>
+          <div id="check">
+            <input type="checkbox" id="email-checkbox" name="email" value="email" />
+            <label for="email">E-mail</label>
+            <input type="checkbox" id="linkedin-checkbox" name="linkedin" value="linkedin" />
+            <label for="linkedin">LinkedIn</label>
+            <input type="checkbox" id="facebook-checkbox" name="facebook" value="facebook" />
+            <label for="facebook">Facebook</label>
+            <input type="checkbox" id="whatsApp-checkbox" name="whatsApp" value="whatsApp" />
+            <label for="whatsApp">WhatsApp</label>
+          </div>
+        </fieldset>
+        <button type="submit" class="botao">Enviar</button>
+        <div id="privacidade">
+          <a href="privacy.html" target="_blank">Política de Privacidade</a>
+        </div>
+      </form>
+    </div>
+    <!-- início máscara dos campos -->
+    <script type="text/javascript">
+      function mascara(i,t){
+        var v = i.value;
+   
+        if(isNaN(v[v.length-1])){
+          i.value = v.substring(0, v.length-1);
+          return;
+        }
+
+        if(t == "data-nascimento"){
+          i.setAttribute("maxlength", "10");
+          if (v.length == 2 || v.length == 5) i.value += "/";
+        }
+
+        if(t == "telefone-ddd"){
+          i.setAttribute("maxlength", "3");
+        }
+   
+        if(t == "telefone-numero"){
+          if(v[0] == 9){
+            i.setAttribute("maxlength", "10");
+            if (v.length == 5) i.value += "-";
+          }else{
+            i.setAttribute("maxlength", "9");
+            if (v.length == 4) i.value += "-";
+          } 
+        }
+      }
+    </script><!-- fim máscaras dos campos -->
+    <script src="script.js"></script>
+    <footer class="desenvolvido-por">
+      </br><a href="https://br.linkedin.com/in/carol-hogler" target="_blank">Desenvolvido por Carolina Högler</a>
+    </footer>
+  </body>
+</html>

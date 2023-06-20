@@ -1,0 +1,224 @@
+* {
+    margin: 1000;
+    padding: 1000;
+    font-family: sans-serif;
+}
+
+#titulo {
+    color: #660085;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#subtitulo {
+    color: #660085;
+    text-align: center;
+}
+
+fieldset {
+    border: 10;
+}
+
+body {
+    font-family: "Roboto",Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #660085;
+    background-color: #d8a7c7;
+    text-align: center;
+}
+
+input, select, textarea, button {
+    border-radius: 5px;
+}
+
+.campos {
+    margin-bottom: 1em;
+}
+
+.campos label {
+    margin-bottom: 1em;
+    color: #660085;
+    display: block;
+}
+
+fieldset.grupo .campos {
+    float: center;
+    margin-bottom: 1em;
+}
+
+.campos input[type="text"], .campos input[type="email"], .campos input[type="number"], .campos input[type="link"], .campos input[type="color"], .campos input[type="date"] {
+    width: 100%;
+    height: 34px;    
+    padding-left: 5px;
+    box-sizing: border-box;
+    
+}
+
+.campos input[type="text"], .campos input[type="email"], .campos input[type="number"], .campos input[type="link"], .campos input[type="color"], .campos input[type="date"], .urgencia select, .estudo select, .campos textarea {
+    padding: 0.2em;
+    border: 1px solid #660085;
+    box-shadow: 2px 2px 2px #660085;
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 34px;    
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.campos select option {
+    padding-right: 1em;
+}
+
+.campos input:focus, .campos select:focus, .campos textarea:focus {
+    background-color: #fffffe;
+}
+
+.botao {
+    font-size: 1.2em;
+    background: #d496e7;
+    border: #e100ff solid 2px;
+    color: #653253;
+    padding: 0.8em 1.2em;
+    font-weight: bold;
+    margin: auto;
+    display: block;
+    margin-top: 20px;
+}
+
+.botao:hover {
+    background: #e100ff;
+    border: #d496e7 solid 2px;
+    color: #d496e7;
+}
+
+#check {
+    display: inline-block;
+}
+
+#tipo-apoio label, #check label {
+    margin-bottom: 0.4em;
+}
+
+#check label {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+#fundo-branco {
+    background:#fffffe;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.mensagem-sucesso {
+    display: none;
+    background-color: #4fc4cf;
+    color: #181818;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+
+.mensagem-erro {
+    display: none;
+    background-color: #fbdd74;
+    color: #181818;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+
+.mensagem-sucesso, .mensagem-erro {
+    text-align: center;
+}
+
+.preenchimento-obrigatorio {
+    color: #660085;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.preenchimento-opcional {
+    color: #660085;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.telefone-label-span {
+    display: none;
+}
+
+.ddd-telefone:focus {
+    border: solid 1px #644560;
+    box-shadow: none;
+}
+
+.ddd-telefone {
+    height: 36px;
+    padding: 0 5px;
+    border:  #bebebe solid 1px;
+    border-radius: 3px;
+    width: 45px;
+    text-align: right; 
+    color: #660085;
+}
+
+.numero-telefone {
+    height: 36px;
+    padding: 0 5px;
+    border: solid 1px #bebebe;
+    border-radius: 3px;
+    width: 80px;
+    text-align: left; 
+    color: #660085;
+}
+
+#privacidade {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#privacidade a {
+    color: #4fc4cf;
+    font-weight: bold;
+}
+
+#privacidade a:hover {
+    color: #181818;
+}
+
+.privacidade h2 {
+    text-align: center;
+}
+
+.privacidade p {
+    margin-bottom: 0.2em;
+}
+
+@media (max-width: 411px) {
+    #fundo-branco {
+        border-radius: 0;
+    }
+
+    .mensagem-erro, .mensagem-sucesso {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .campos input[type="text"], .campos input[type="email"], .campos input[type="number"], .campos input[type="color"], .campos input[type="date"] {
+        width: 330px;
+    }
+}
