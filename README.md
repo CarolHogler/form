@@ -1,10 +1,10 @@
 # form
 
-Form development test project.
+Projeto de desenvolvimento e teste automatizados de um formulário.
 
-## Tests
+## Testes
 
-Automation tests in progress.
+Testes automatizados em andamento.
 ___
 
-This project was created with 💚 by [Carol](https://br.linkedin.com/in/carol-hogler).
+Este projeto foi criado com 💚 por [Carol](https://br.linkedin.com/in/carol-hogler).
